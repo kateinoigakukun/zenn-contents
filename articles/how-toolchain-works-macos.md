@@ -140,27 +140,6 @@ $ cat /Library/Developer/Toolchains/swift-tensorflow-RELEASE-0.9.xctoolchain/Inf
 
 ### 切り替えの優先度
 
-<!--
-digraph {
-  check_toolchains_env[label = "TOOLCHAINS環境変数が定義されているか"]
-  is_match_xctoolchain[label = "マッチするxctoolchainが/Library/Developer/Toolchains/にあるか"]
-  is_exist_cmd_in_xctoolchain[label = "コマンドが存在するか"]
-  run_xctoolchain_bin[label = "見つかったコマンドを実行"]
-  check_developer_dir[label = "Developer Directoryにコマンドが存在するか"]
-  run_dev_dir_bin[label = "見つかったコマンドを実行"]
-  fail[label = "失敗"]
-
-  check_toolchains_env -> is_match_xctoolchain[label = "YES"]
-  check_toolchains_env -> check_developer_dir[label = "NO"]
-  is_match_xctoolchain -> is_exist_cmd_in_xctoolchain[label = "YES"]
-  is_match_xctoolchain -> check_developer_dir[label = "NO"]
-  is_exist_cmd_in_xctoolchain -> run_xctoolchain_bin[label = "YES"]
-  is_exist_cmd_in_xctoolchain -> check_developer_dir[label = "NO"]
-  check_developer_dir -> run_dev_dir_bin[label = "YES"]
-  check_developer_dir -> fail[label = "NO"]
-}
--->
-
 以上のルールをまとめたフローの図です。
 
 ![](https://storage.googleapis.com/zenn-user-upload/0a84uesbsoo7j60ul0k1j6vyzrwg)
