@@ -3,7 +3,7 @@ title: "macOSのツールチェーンの仕組み"
 emoji: "🤖"
 type: "tech"
 topics: [macOS]
-published: false
+published: true
 ---
 
 macOSにはシステムにインストールされた複数のバージョンのツールチェーンを切り替えて使うための仕組みが備わっています。しかし、そのメカニズムについて記述された文書は少なく、雰囲気で `xcode-select` コマンドを使っている方も多いと思います。
