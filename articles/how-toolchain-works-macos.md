@@ -2,7 +2,7 @@
 title: "macOSのツールチェーンの仕組み"
 emoji: "🤖"
 type: "tech"
-topics: [macOS]
+topics: [macOS, Swift]
 published: true
 ---
 
