@@ -11,7 +11,7 @@ SwifWasmの最初の安定したツールチェーンがリリースされまし
 ## Overview
 
 
-今回のリリースはSwiftWasmツールチェーンの最初の安定バージョンリリースです。
+[今回のリリースはSwiftWasmツールチェーンの最初の安定バージョンリリースです。](https://github.com/swiftwasm/swift/releases/tag/swift-wasm-5.3.0-RELEASE)
 
 macOS用の署名済み.pkgインストーラーとして提供されており、またIntelベースのUbuntu 18.04と20.04用のswiftenv互換アーカイブとDockerイメージしても提供されています。
 
