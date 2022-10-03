@@ -29,8 +29,11 @@ SwiftWasmのアプリをビルドする際には [carton](https://github.com/swi
 $ brew install swiftwasm/tap/carton
 ```
 
-Linux環境の場合、現状自前でビルドする必要があるのでREADME.mdを読んで頑張ってください。
+Linux環境の場合、Dockerイメージを使うのがお手軽だと思います。
 
+```bash
+$ docker run -it --rm -p 8080:8080 -v $(pwd):$(pwd) -w $(pwd) ghcr.io/swiftwasm/carton
+```
 
 ### 1. プロジェクトを作る
 
@@ -53,19 +56,18 @@ $ tree
 ├── README.md
 ├── Sources
 │   └── SampleApp
-│       └── main.swift
+│       └── App.swift
 └── Tests
-    ├── LinuxMain.swift
     └── SampleAppTests
-        ├── SampleAppTests.swift
-        └── XCTestManifests.swift
+        └── SampleAppTests.swift
 ```
 
-`main.swift`の内容は以下のようなSwiftUIに似たコードになっています。
+`App.swift`の内容は以下のようなSwiftUIに似たコードになっています。
 
 ```swift
-import TokamakShim
+import TokamakDOM
 
+@main
 struct TokamakApp: App {
     var body: some Scene {
         WindowGroup("Tokamak App") {
@@ -79,8 +81,6 @@ struct ContentView: View {
         Text("Hello, world!")
     }
 }
-
-TokamakApp.main()
 ```
 
 
@@ -88,6 +88,9 @@ TokamakApp.main()
 ### 2. 動かしてみる
 
 プロジェクトを作ったばかりですが、早速動かしてみましょう。プロジェクトディレクトリで `carton dev` コマンドを実行することでアプリを実行することが出来ます。 [http://127.0.0.1:8080](http://127.0.0.1:8080) にアクセスすると実際に動作している様子が確認できます。
+
+> **Warning**
+> Dockerコンテナ上で実行する場合はコンテナ外からのリクエストを受け付けるために `carton dev --host 0.0.0.0` を実行してください。
 
 初回実行時にツールチェーンをインストールするので2~3分時間がかかるので注意してください。
 
@@ -111,8 +114,9 @@ $ carton dev
 楽しくなってきましたね。
 
 ```swift
-import TokamakShim
+import TokamakDOM
 
+@main
 struct TokamakApp: App {
     var body: some Scene {
         WindowGroup("Tokamak App") {
@@ -152,8 +156,6 @@ struct ContentView: View {
         }
     }
 }
-
-TokamakApp.main()
 ```
 
 
