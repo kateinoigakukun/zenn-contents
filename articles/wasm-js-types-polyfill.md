@@ -8,6 +8,8 @@ published: true
 
 [WebAssembly Type Reflection JS API](https://github.com/WebAssembly/js-types/blob/main/proposals/js-types/Overview.md)と呼ばれるAPIのPolyfillを書いたので、その紹介です。WebAssemblyでスレッドを扱う際に少し便利になります。
 
+https://github.com/swiftwasm/wasm-imports-parser
+
 ## WebAssembly Type Reflection JS APIとは
 
 WebAssembly Type Reflection JS APIは、WebAssemblyモジュールからimport/exportされる関数のシグネチャやメモリサイズの情報を取得するためのJavaScript APIです。
